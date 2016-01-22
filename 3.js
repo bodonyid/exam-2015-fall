@@ -7,12 +7,22 @@
 // it should have a "toString" method that returns it's stats as a string like:
 // 'Radius: 4, Circumference: 25.132741228718345, Area: 50.26548245743669'
 
+function Circle(radius) {
+  this.radius = radius;
 
+  this.getCircumference = function() {
+    return 2 * this.radius * Math.PI;
+  }
 
+  this.getArea = function() {
+    return Math.PI * this.radius * this.radius;
+  }
 
+  this.toString = function() {
+    return {'Radius': this.radius, 'Circumference': this.getCircumference(), 'Area': this.getArea()}
+  }
+}
 
+var circle = new Circle(4);
 
-
-
-
-
+console.log(circle.toString());
